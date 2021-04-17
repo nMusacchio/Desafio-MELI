@@ -1,0 +1,24 @@
+@media (max-width: 1023px) {
+  .item .right {
+    padding: 0px; }
+  .item .left {
+    width: 100%; }
+  .item .image {
+    margin-bottom: 10px; } }
+
+@media (max-width: 767px) {
+  .products .product .image {
+    width: 100%; }
+  .products .product .price {
+    margin-bottom: 10px; }
+  .products .product .city {
+    position: initial;
+    margin-top: 4px; }
+  .item .item-wrapper .image {
+    height: 340px; } }
+
+@media (max-width: 479px) {
+  header .header-wrapper {
+    justify-content: center; }
+  header .logo {
+    margin-bottom: 5px; } }

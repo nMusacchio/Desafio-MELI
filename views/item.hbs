@@ -1,0 +1,28 @@
+<div class="item">
+    <div class="container">
+        {{#if item}}
+        {{> breadcrumb}}
+        <div class="item-wrapper">
+            <div class="main">
+                <div class="left">
+                    <div class="image" style="background-image: url({{item.picture}});"></div>
+                </div>
+                <div class="right">
+                    <p class="info">{{formatCondition item.condition}} - {{item.sold_quantity}} vendidos</p>
+                    <p class="title">{{item.title}}</p>
+                    <p class="price">$ {{formatCurrency item.price.amount}}</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+            <div class="left">
+                <div class="description">
+                    <h2>Detalle del producto</h2>
+                    <p>{{item.description}}</p>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <p class="no-found">Producto inválido</p>
+        {{/if}}
+    </div>
+</div>
