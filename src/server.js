@@ -8,7 +8,7 @@ const config = require('./config.js');
 const utils = require('./utils.js')
 
 /* Configs */
-PORT = process.env.PORT || 3000;
+PORT = process.env.PORT || config.port;
 
 app.use(express.static(__dirname + '/../public'));
 app.engine('hbs', exphbs({defaultLayout: 'main', extname: '.hbs', partialsDir: __dirname + '/../views/partials', helpers: require(__dirname + '/hbs_helpers/handlebars-helpers')}));
@@ -31,7 +31,7 @@ app.get('/api/items', (req, res) => {
                 items: []
             });
         } else{
-            let categories = utils.get_categories(result);
+            let categories = utils.get_categories(result.filters, result.available_filters);
             let items = utils.get_items(result.results);
             res.send({
                 author: config.author,

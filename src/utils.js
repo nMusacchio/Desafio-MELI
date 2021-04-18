@@ -6,26 +6,21 @@ function get_parents_category(path_from_root){
         categories.push(category.name);
     }
 
+
     return categories;
 }
 
-function get_categories(results){
-    const {filters, available_filters} = results;
-
+function get_categories(filters, available_filters){
     let filter_values;
 
     if(filters && filters.length > 0){
         filter_values = filters;
-    }
-    else {
-        if(available_filters && available_filters.length > 0)
-            filter_values = available_filters;
+    } else if(available_filters && available_filters.length > 0){
+        filter_values = available_filters;
     }
 
     const category_filters = filter_values.filter(f => f.id === "category");
-    const _categories = category_filters[0].values;
-
-    const path_from_root = _categories[0].path_from_root;
+    const path_from_root = category_filters[0].values.path_from_root;
 
     let categories = []
 
@@ -35,6 +30,7 @@ function get_categories(results){
     for(let step of path_from_root){
         categories.push(step.name);
     }
+
     return categories;
 }
 
@@ -47,6 +43,7 @@ function get_price(price){
     else
         decimal_part = 0;
     
+
     return {
         integer_part,
         decimal_part
@@ -55,6 +52,8 @@ function get_price(price){
 
 function get_item(raw_item){
     let price = get_price(raw_item.price);
+
+
     return  {
         id: raw_item.id,
         title: raw_item.title,
@@ -75,6 +74,7 @@ function get_items(raw_items){
     for(let item of _items){
         items_mapped.push(get_item(item));
     }
+
 
     return items_mapped;
 }
