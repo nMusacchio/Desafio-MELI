@@ -6,7 +6,6 @@ function get_parents_category(path_from_root){
         categories.push(category.name);
     }
 
-
     return categories;
 }
 
@@ -43,7 +42,6 @@ function get_price(price){
     else
         decimal_part = 0;
     
-
     return {
         integer_part,
         decimal_part
@@ -52,7 +50,6 @@ function get_price(price){
 
 function get_item(raw_item){
     let price = get_price(raw_item.price);
-
 
     return  {
         id: raw_item.id,
@@ -74,7 +71,6 @@ function get_items(raw_items){
     for(let item of _items){
         items_mapped.push(get_item(item));
     }
-
 
     return items_mapped;
 }
