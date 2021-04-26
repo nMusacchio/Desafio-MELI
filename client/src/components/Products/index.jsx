@@ -10,8 +10,8 @@ import {getParams} from '../utils';
 const Products = (props) =>{
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [loading, setLoading] = useState(true)
-    let search;
+    const [loading, setLoading] = useState(true);
+    
     useEffect(()=>{
         let search = getParams(window.location.search);
         fetch(`/api/items?q=${search}`)

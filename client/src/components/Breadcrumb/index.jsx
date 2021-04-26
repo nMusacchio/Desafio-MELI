@@ -7,7 +7,7 @@ const Breadcrumb = ({categories}) =>{
         categories_result = categories.map((category, index)=>{
             return(
                 <React.Fragment key={index}>
-                    <a href={`/items?search=${category}`}>{category}</a>
+                    <span href={`/items?search=${category}`}>{category}</span>
                     {index < categories.length - 1 ? ' / ' : ''}
                 </React.Fragment>
             )   
