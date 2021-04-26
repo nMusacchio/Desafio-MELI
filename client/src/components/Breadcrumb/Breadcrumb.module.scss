@@ -1,0 +1,13 @@
+@import '../vars.scss';
+
+.breadcrumb{
+    color: $light-grey-color;
+    font-size: 14px;
+    margin-bottom: $small-margin;
+    a{
+        color: $light-grey-color;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

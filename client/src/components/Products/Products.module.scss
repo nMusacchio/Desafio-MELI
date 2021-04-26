@@ -1,0 +1,12 @@
+@import '../vars.scss';
+
+.products {
+    background-color: white;
+    border-radius: $radius;
+    padding: 0px $small-margin;
+    margin-bottom: 20px;
+    .hLine{
+        width: 100%;
+        border: 1px solid $background-color;
+    }
+}
