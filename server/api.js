@@ -21,11 +21,9 @@ router.get('/items/:id', (req, res) => {
     let item;
     getItem(item, req.params.id)
     .then(({item, cat_id})=>{
-        console.log(item.item)
         if(Object.keys(item.item).length == 0){
             res.json(item)
         }else{
-            console.log("olaaaa")
             return getDescription(item, req.params.id, cat_id);
         }
     })
