@@ -29,7 +29,7 @@ const slowdownMiddleware = (req, res, next) => {
     if(config.inProd)
         next();
     else
-        setTimeout(next, 1000); // Simular delay
+        setTimeout(next, 0); // Simular delay
 };
 
 app.use('/api', slowdownMiddleware, apiRouter);
