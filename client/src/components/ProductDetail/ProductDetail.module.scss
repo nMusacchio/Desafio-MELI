@@ -13,8 +13,8 @@
         min-width: 190px;
     }
     .main{
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }   
     .image{
         width: 100%;
@@ -63,6 +63,9 @@
 
 @media (max-width: 1023px){
     .itemWrapper{
+        .main{
+            grid-template-columns: 1fr;
+        }
         .right{
             padding: 0px;
         }
